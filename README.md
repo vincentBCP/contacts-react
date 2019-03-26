@@ -1,4 +1,4 @@
-# Guestbook - React Redux
+# Contacts List - React Redux Skills Test
 
 - Build a simple contacts list using React - Redux
 
