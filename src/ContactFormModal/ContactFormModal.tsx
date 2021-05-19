@@ -15,6 +15,12 @@ import {
 
 import Contact from '../models/Contact';
 
+import {
+    nameRegExp,
+    emailRegExp,
+    mobileNumberRegExp
+} from '../constants';
+
 interface IFormInputs {
     firstName: string,
     middleName?: string,
@@ -105,7 +111,11 @@ const ContactFormModal: React.FC<IContactFormModalProps> = props => {
                                 className={classes.field}
                                 inputProps={{
                                     ...register('firstName', {
-                                        required: "Required"
+                                        required: "Required",
+                                        pattern: {
+                                            value: nameRegExp,
+                                            message: 'Invalid format'
+                                        }
                                     })
                                 }}
                             />
@@ -118,7 +128,10 @@ const ContactFormModal: React.FC<IContactFormModalProps> = props => {
                                 className={classes.field}
                                 inputProps={{
                                     ...register('middleName', {
-                                        
+                                        pattern: {
+                                            value: nameRegExp,
+                                            message: 'Invalid format'
+                                        }
                                     })
                                 }}
                             />
@@ -132,7 +145,11 @@ const ContactFormModal: React.FC<IContactFormModalProps> = props => {
                                 className={classes.field}
                                 inputProps={{
                                     ...register('lastName', {
-                                        required: "Required"
+                                        required: "Required",
+                                        pattern: {
+                                            value: nameRegExp,
+                                            message: 'Invalid format'
+                                        }
                                     })
                                 }}
                             />
@@ -146,7 +163,11 @@ const ContactFormModal: React.FC<IContactFormModalProps> = props => {
                                 className={classes.field}
                                 inputProps={{
                                     ...register('mobileNumber', {
-                                        required: "Required"
+                                        required: "Required",
+                                        pattern: {
+                                            value: mobileNumberRegExp,
+                                            message: 'Invalid format'
+                                        }
                                     })
                                 }}
                             />
@@ -160,7 +181,11 @@ const ContactFormModal: React.FC<IContactFormModalProps> = props => {
                                 className={classes.field}
                                 inputProps={{
                                     ...register('emailAddress', {
-                                        required: "Required"
+                                        required: "Required",
+                                        pattern: {
+                                            value: emailRegExp,
+                                            message: 'Invalid format'
+                                        }
                                     })
                                 }}
                             />
